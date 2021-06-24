@@ -17,8 +17,13 @@ destroyBtn.addEventListener("click", destroyBoxes);
 function createBoxes(amount) {
     container.classList.add("boxes");
     amount = Number(input.value);
-    let startBoxSize = 30;
-    if (input.value !== '0' && input.value !== '' && container.children.length !== amount) {
+    const minNumber = input.min;
+  const maxNumber = input.max;
+  
+    if (amount < minNumber || amount > maxNumber) return alert(`Введите число от ${minNumber} до ${maxNumber}`)
+  let startBoxSize = 30;
+
+    if (input.value !== '0' && input.value !== '' && container.children.length !== amount &&  Number(input.value) <= 100) {
         do {
     let box = document.createElement("div");
     box.style.width = startBoxSize + "px";
