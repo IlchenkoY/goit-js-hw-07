@@ -21,7 +21,6 @@ function createBoxes(amount) {
     if (input.value !== '0' && input.value !== '' && container.children.length !== amount) {
         do {
     let box = document.createElement("div");
-    box.classList.add("box");
     box.style.width = startBoxSize + "px";
     box.style.height = startBoxSize + "px";
     box.style.backgroundColor = `${randonRGB()}`;
