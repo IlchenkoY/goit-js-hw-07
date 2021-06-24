@@ -15,14 +15,24 @@ createBtn.addEventListener("click", createBoxes);
 destroyBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
-    container.classList.add("boxes");
-    amount = Number(input.value);
-    const minNumber = input.min;
+  container.classList.add("boxes");
+  amount = Number(input.value);
+  const minNumber = input.min;
   const maxNumber = input.max;
-  
-    if (amount < minNumber || amount > maxNumber) return alert(`Введите число от ${minNumber} до ${maxNumber}`)
   let startBoxSize = 30;
 
+  if (amount < minNumber || amount > maxNumber) return alert(`Введите число от ${minNumber} до ${maxNumber}`);
+ 
+
+  if (container.children.length !== 0) {
+  
+    let result = container.lastElementChild.style.width;
+
+    let number = Number(result.split("").slice(0,-2).join(''));
+
+    startBoxSize = number + 10;
+  } 
+  
     if (input.value !== '0' && input.value !== '' && container.children.length !== amount &&  Number(input.value) <= 100) {
         do {
     let box = document.createElement("div");
