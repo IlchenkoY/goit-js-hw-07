@@ -4,8 +4,6 @@ const valueEl = document.querySelector("#value");
 
 let counter = 0;
 
-console.log(isNaN(valueEl.textContent));
-
 decrementBtn.addEventListener('click', () => {
     valueEl.textContent = counter -= 1;
 });
